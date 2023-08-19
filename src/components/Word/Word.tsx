@@ -8,7 +8,6 @@ interface WordProps {
 
 const Word: React.FC<WordProps> = ({ wordData }) => {
     const { word, phonetics, meanings, sourceUrls } = wordData;
-    const meaning = meanings;
     return (
         <div className="container">
             <div className="word-details">
