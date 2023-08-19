@@ -7,10 +7,14 @@
     gap: 5%;
 }
 
+h1.header {
+    margin: 20px;
+}
+
 .search-form {
     max-width: 600px;
     height: max-content;
-    flex-basis: 75%;
+    flex-basis: 80%;
     position: relative;
     padding: 0;
     display: flex;
@@ -19,7 +23,6 @@
     border-radius: 20px;
     overflow: hidden;
     transition: all .3s ease-in-out;
-
 }
 
 .search-input {

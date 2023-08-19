@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { WordData } from "../../types/WordData.type";
 import "./Word.css";
 
@@ -7,7 +7,14 @@ interface WordProps {
 }
 
 const Word: React.FC<WordProps> = ({ wordData }) => {
+    const [isPlaying, setIsPlaying] = useState<boolean>(false);
+
     const { word, phonetics, meanings, sourceUrls } = wordData;
+
+    const toggleAudio = () => {
+        setIsPlaying(!isPlaying);
+    };
+
     return (
         <div className="container">
             <div className="word-details">
@@ -16,21 +23,22 @@ const Word: React.FC<WordProps> = ({ wordData }) => {
                     <p className="phonetic">{phonetics[0].text}</p>
                 }
                 {phonetics.length > 0 && phonetics[0].audio !== "" &&
-                    <audio className="audio" controls key={phonetics[0].audio}>
-                        <source src="" type="audio/mpeg" />
-                        <source src={phonetics[0].audio} type="audio/mpeg" />
-                        Your browser does not support the audio element.
-                    </audio>
+                    <div>
+                        <button onClick={toggleAudio} className="audio-button">
+                            {isPlaying ? <i className="fa-solid fa-volume-xmark"></i> : <i className="fa-solid fa-volume-high"></i>}
+                        </button>
+                        {isPlaying && <audio src={phonetics[0].audio} autoPlay />}
+                    </div>
                 }
                 <div className="meanings">
                     <p>Meanings:</p>
                     {meanings.map((meaning, index) => {
                         return (
-                            <div className="meaning" key={index}>
+                            <div className="meanings" key={index}>
                                 <ul className="definition">
                                     <li>
                                         <strong>{`${index + 1}- ${meaning.partOfSpeech}`}</strong>
-                                        <ul className="definition">
+                                        <ul className="definitions-list">
                                             {meaning.definitions.map((def, index) => (
                                                 <li key={index}>{def.definition}</li>
                                             ))}
