@@ -1,0 +1,23 @@
+* {
+  font-family: 'Rubik', sans-serif;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #e3e3e3;
+  --primary-black: #000000;
+  --primary-gray: #4f4f4f97;
+  --light-gray: #b3b3b3;
+  --dark-gray: #282828;
+  --primary-blue: #007BFF;
+
+}
+
+[data-theme='light'] {
+  --bg: #000;
+  --primary-black: #fff;
+  --primary-gray: #b0b0b0;
+  --light-gray: #1c1c1c;
+  --dark-gray: #dcdcdc;
+  --primary-blue: #007BFF;
+}

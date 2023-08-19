@@ -1,0 +1,51 @@
+.container {
+    margin: 40px auto;
+    border-top: 2px solid var(--light-gray);
+    max-width: 750px;
+    transition: all .7s ease-in-out;
+
+}
+
+.word {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.phonetic {
+    font-style: italic;
+    margin-top: 5px;
+}
+
+.audio {
+    margin-top: 10px;
+    border-radius: 15px;
+}
+
+.meanings {
+    margin-top: 10px;
+}
+
+.definition {
+    margin-left: 20px;
+    margin-top: 5px;
+    list-style: none;
+}
+
+.synonyms,
+.antonyms {
+    margin-top: 10px;
+}
+
+.source {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+a {
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
