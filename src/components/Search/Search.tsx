@@ -11,7 +11,7 @@ const Search: React.FC<SearchProps> = ({ handleSubmit, handleChange }) => {
 
             <form action="" className="search-form" onSubmit={handleSubmit}>
                 <input type="text" className="search-input" placeholder="Enter a word..." onChange={handleChange} />
-                <button className="search-button"><i className="fa-solid fa-magnifying-glass"></i></button>
+                <button className="search-button" title="Search"><i className="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </div>)
 }

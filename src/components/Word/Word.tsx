@@ -24,10 +24,10 @@ const Word: React.FC<WordProps> = ({ wordData }) => {
                 }
                 {phonetics.length > 0 && phonetics[0].audio !== "" &&
                     <div>
-                        <button onClick={toggleAudio} className="audio-button">
+                        <button onClick={toggleAudio} className="audio-button" title={isPlaying ? 'Pause' : 'Play'}>
                             {isPlaying ? <i className="fa-solid fa-volume-xmark"></i> : <i className="fa-solid fa-volume-high"></i>}
                         </button>
-                        {isPlaying && <audio src={phonetics[0].audio} autoPlay />}
+                        {isPlaying && <audio src={phonetics[0].audio} autoPlay preload="auto" onEnded={toggleAudio} />}
                     </div>
                 }
                 <div className="meanings">

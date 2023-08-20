@@ -57,7 +57,7 @@ function App() {
   return (
     <>
       <main data-theme={theme}>
-        <div className="toggle-switch">
+        <div className="toggle-switch" title={theme}>
           <input type="checkbox" id="toggle-switch" checked={theme === 'light' ? true : false} />
           <label htmlFor={"toggle-switch"} className="slider" onClick={switchTheme}></label>
         </div>
