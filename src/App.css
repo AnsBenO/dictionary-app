@@ -24,7 +24,7 @@ main {
     border: 8px solid transparent;
     border-right-color: var(--primary-gray);
     position: absolute;
-    top: 100px;
+    top: 50px;
     left: calc(50% - 25px);
     animation: s4 1s infinite linear;
 }
