@@ -16,6 +16,12 @@
 
 }
 
+::selection {
+  background: #3c3c3c;
+  color: #ffffff;
+}
+
+
 [data-theme='light'] {
   --bg: #000;
   --primary-black: #fff;
