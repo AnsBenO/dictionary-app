@@ -41,6 +41,8 @@ h1.header {
     font-size: 18px;
     right: 10px;
     background-color: transparent;
+    height: 35px;
+    width: 35px;
     border: none;
     cursor: pointer;
     transition: all .7s ease-in-out;
