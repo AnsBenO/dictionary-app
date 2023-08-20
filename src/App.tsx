@@ -63,15 +63,17 @@ function App() {
         </div>
 
         <Search handleSubmit={onSearch} handleChange={handleChange} />
-        {loader && <div className="loader"></div>}
+        <div className="content">
+          {loader && <div className="loader"></div>}
 
-        {wordData ?
-          wordData.map((word, index) => <Word key={index} wordData={word} />)
-          : (submitted
-            ? <div className="message"><i className="fa-solid fa-circle-exclamation"></i> No Definitions Found.</div> :
-            (!loader
-              ? <div className="message">Welcome to Web Dictionary!</div> :
-              ''))}
+          {wordData ?
+            wordData.map((word, index) => <Word key={index} wordData={word} />)
+            : (submitted
+              ? <div className="message"><i className="fa-solid fa-circle-exclamation"></i> No Definitions Found.</div> :
+              (!loader
+                ? <div className="message">Welcome to Web Dictionary!</div> : ''))
+          }
+        </div>
       </main>
     </>
   )

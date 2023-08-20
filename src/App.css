@@ -24,7 +24,7 @@ main {
     border: 8px solid transparent;
     border-right-color: var(--primary-gray);
     position: absolute;
-    top: 35%;
+    top: 100px;
     left: calc(50% - 25px);
     animation: s4 1s infinite linear;
 }
@@ -108,4 +108,8 @@ main {
 .toggle-switch input:checked+.slider::before {
     transform: translateX(30px);
     background-color: var(--light-gray);
+}
+
+.content {
+    position: relative;
 }
