@@ -60,6 +60,7 @@ function App() {
         <div className="toggle-switch" title={theme}>
           <input type="checkbox" id="toggle-switch" checked={theme === 'light' ? true : false} />
           <label htmlFor={"toggle-switch"} className="slider" onClick={switchTheme}></label>
+          <p className="light-dark">{theme.toUpperCase()}</p>
         </div>
 
         <Search handleSubmit={onSearch} handleChange={handleChange} />

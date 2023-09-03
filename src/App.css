@@ -93,6 +93,17 @@ main {
     background-color: var(--dark-gray);
 }
 
+.light-dark {
+    position: absolute;
+    left: 110%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-gray);
+    font-weight: 800;
+    font-size: 14px;
+
+}
+
 
 .toggle-switch .slider::before {
     content: "";
