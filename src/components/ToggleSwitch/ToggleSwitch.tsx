@@ -1,4 +1,5 @@
 import { ChangeEventHandler } from "react";
+import "./ToggleSwitch.css"
 
 interface ToggleSwitchProps {
     theme: string;

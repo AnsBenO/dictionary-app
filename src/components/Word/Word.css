@@ -1,9 +1,8 @@
-.container {
+.word-details {
     margin: 40px auto;
     padding: 15px;
     border-top: 2px solid var(--light-gray);
     max-width: 900px;
-    transition: all .7s ease-in-out;
 }
 
 .word {
@@ -67,8 +66,7 @@ a:hover {
     border: none;
 }
 
-.audio-button i {
+.audio-button .volume-icon {
     font-size: 20px;
     color: var(--dark-gray);
-    transition: all .7s ease-in-out;
 }
