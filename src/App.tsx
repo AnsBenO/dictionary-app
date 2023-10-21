@@ -5,6 +5,7 @@ import Word from "./components/Word/Word"
 import { WordData } from "./types/WordData.type";
 import { API_URL } from "./api";
 import useLocalStorage from "use-local-storage";
+import ToggleSwitch from "./components/ToggleSwitch/ToggleSwitch";
 
 
 function App() {
@@ -57,16 +58,10 @@ function App() {
   return (
     <>
       <main data-theme={theme}>
-        <div className="toggle-switch" title={theme}>
-          <input type="checkbox" id="toggle-switch" checked={theme === 'light' ? true : false} />
-          <label htmlFor={"toggle-switch"} className="slider" onClick={switchTheme}></label>
-          <p className="light-dark">{theme !== 'light' ? 'LIGHT MODE' : 'DARK MODE'}</p>
-        </div>
-
+        <ToggleSwitch theme={theme} switchTheme={switchTheme} />
         <Search handleSubmit={onSearch} handleChange={handleChange} />
         <div className="content">
           {loader && <div className="loader"></div>}
-
           {wordData ?
             wordData.map((word, index) => <Word key={index} {...word} />)
             : (submitted
