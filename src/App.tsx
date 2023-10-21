@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { ChangeEventHandler, FormEventHandler, useState } from "react"
 import "./App.css"
 import Search from "./components/Search/Search"
 import Word from "./components/Word/Word"
@@ -20,7 +20,7 @@ function App() {
     setTheme(newTheme)
 
   }
-  const onSearch = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSearch: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     if (query.trim().length !== 0) {
       setLoader(true);
@@ -49,7 +49,7 @@ function App() {
     }
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     e.preventDefault();
     const searchValue = e.target.value;
     setQuery(searchValue);
@@ -60,7 +60,7 @@ function App() {
         <div className="toggle-switch" title={theme}>
           <input type="checkbox" id="toggle-switch" checked={theme === 'light' ? true : false} />
           <label htmlFor={"toggle-switch"} className="slider" onClick={switchTheme}></label>
-          <p className="light-dark">{theme !== 'light' ? 'DARK MODE' : 'LIGHT MODE'}</p>
+          <p className="light-dark">{theme !== 'light' ? 'LIGHT MODE' : 'DARK MODE'}</p>
         </div>
 
         <Search handleSubmit={onSearch} handleChange={handleChange} />
@@ -68,7 +68,7 @@ function App() {
           {loader && <div className="loader"></div>}
 
           {wordData ?
-            wordData.map((word, index) => <Word key={index} wordData={word} />)
+            wordData.map((word, index) => <Word key={index} {...word} />)
             : (submitted
               ? <div className="message"><i className="fa-solid fa-circle-exclamation"></i> No Definitions Found.</div> :
               (!loader

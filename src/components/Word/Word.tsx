@@ -2,14 +2,9 @@ import React, { useState } from "react";
 import { WordData } from "../../types/WordData.type";
 import "./Word.css";
 
-interface WordProps {
-    wordData: WordData;
-}
 
-const Word: React.FC<WordProps> = ({ wordData }) => {
+const Word: React.FC<WordData> = ({ word, phonetics, meanings, sourceUrls }: WordData) => {
     const [isPlaying, setIsPlaying] = useState<boolean>(false);
-
-    const { word, phonetics, meanings, sourceUrls } = wordData;
 
     const toggleAudio = () => {
         setIsPlaying(!isPlaying);

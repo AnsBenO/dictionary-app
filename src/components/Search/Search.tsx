@@ -1,8 +1,9 @@
+import { ChangeEventHandler, FormEventHandler } from "react";
 import "./Search.css"
 
 interface SearchProps {
-    handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
-    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    handleSubmit: FormEventHandler<HTMLFormElement>;
+    handleChange: ChangeEventHandler<HTMLInputElement>;
 }
 const Search: React.FC<SearchProps> = ({ handleSubmit, handleChange }) => {
     return (
