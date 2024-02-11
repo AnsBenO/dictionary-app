@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark, faBars } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
@@ -7,13 +7,27 @@ import "./Navigation.css";
 
 const Navigation: React.FC = () => {
     const [isHidden, setIsHidden] = useState<boolean>(true);
+    const navigationRef = useRef<HTMLDivElement>(null);
 
     const handleClick = () => {
         setIsHidden(!isHidden);
     };
+    const handleOutsideClick = (event: MouseEvent) => {
+        if (navigationRef.current && !navigationRef.current.contains(event.target as Node)) {
+            setIsHidden(true);
+        }
+    };
+    useEffect(() => {
+        document.addEventListener('mousedown', handleOutsideClick);
+
+        return () => {
+            document.removeEventListener('mousedown', handleOutsideClick);
+        };
+    }, []);
+
 
     return (
-        <div className="navigation">
+        <div className="navigation" ref={navigationRef} >
             <nav>
                 <ul className="links">
                     <li className='link'><Link to="/">Home</Link></li>
