@@ -9,6 +9,7 @@
 
 h1.header {
     margin: 20px;
+    font-size: 2rem;
 }
 
 .search-form {
@@ -46,9 +47,12 @@ h1.header {
     cursor: pointer;
 }
 
-.search-button .fa-magnifying-glass {
-    color: var(--dark-gray);
+.search-icon {
+    color: var(--primary-gray);
+}
 
+.search-button:hover .search-icon {
+    color: var(--primary-black);
 }
 
 .search-input:focus {
