@@ -37,7 +37,6 @@ form:focus-within {
 
 }
 
-.search-input:focus {}
 
 ul {
     list-style-type: none;
@@ -71,6 +70,8 @@ ul {
     font-size: 15px;
     cursor: pointer;
     display: none;
+    color: var(--dark-gray);
+
 }
 
 .word-search-button>* {
