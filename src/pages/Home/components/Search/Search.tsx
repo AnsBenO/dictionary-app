@@ -13,7 +13,7 @@ const Search: React.FC<SearchProps> = ({ handleSubmit, handleChange }) => {
             <h1 className="header">Web Dictionary</h1>
 
             <form action="" className="search-form" onSubmit={handleSubmit}>
-                <input type="text" className="search-input" placeholder="Enter a word..." onChange={handleChange} />
+                <input type="text" className="search-form-input" placeholder="Enter a word..." onChange={handleChange} />
                 <button className="search-button" title="Search">
                     <FontAwesomeIcon className="search-icon" icon={faSearch} ></FontAwesomeIcon>
                 </button>
