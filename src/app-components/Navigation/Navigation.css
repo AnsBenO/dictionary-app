@@ -131,7 +131,7 @@ nav .toggle_btn.active {
 }
 
 .dropdown_menu .action_btn {
-    width: 300px;
+    width: 260px;
     z-index: 100;
     text-align: center;
 }
