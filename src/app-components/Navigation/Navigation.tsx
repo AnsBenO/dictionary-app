@@ -27,8 +27,10 @@ const Navigation: React.FC = () => {
         };
     }, []);
 
-    const isActiveLink = (path: string) => location.pathname.split("/")[1] === path;
-
+    const isActiveLink = (path: string) => {
+        const currentPath = location.pathname.split("/")[1];
+        return (path === "" && location.search) || currentPath === path;
+    };
     return (
         <div className="navigation" ref={navigationRef}>
             <nav>

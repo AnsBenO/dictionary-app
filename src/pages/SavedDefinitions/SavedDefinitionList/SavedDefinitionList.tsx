@@ -27,7 +27,7 @@ const SavedDefinitionsList: React.FC<SavedDefinitionsListProps> = ({
                         {definition.word} - {new Date(definition.savedAt).toLocaleDateString()}
                         <div className="buttons">
                             <button className="word-search-button" >
-                                <Link to={`/${definition.word}`}>
+                                <Link to={`/search?word=${definition.word}`}>
                                     <FontAwesomeIcon icon={faSearch} />
                                 </Link>
                             </button>

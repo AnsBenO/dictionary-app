@@ -5,7 +5,6 @@ import { WordData } from "../../types/WordData.type";
 import { API_URL } from "../../api";
 import Search from "./components/Search/Search";
 import Word from "./components/Word/Word";
-import { useParams } from "react-router-dom";
 import Loader from "../../app-components/Loader/Loader";
 
 function Home() {
@@ -13,8 +12,8 @@ function Home() {
   const [wordData, setWordData] = useState<WordData[] | null>();
   const [loader, setLoader] = useState<boolean>(false);
   const [submitted, setSubmitted] = useState<boolean>(false);
-  const { word: pathWord } = useParams<{ word?: string }>();
-
+  const queryParams = new URLSearchParams(location.search);
+  const pathWord = queryParams.get("word");
   useEffect(() => {
     if (pathWord) {
       void fetchData(pathWord);
