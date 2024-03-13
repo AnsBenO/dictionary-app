@@ -4,10 +4,13 @@ import useLocalStorage from "use-local-storage";
 import ToggleSwitch from "./app-components/ToggleSwitch/ToggleSwitch";
 import Navigation from "./app-components/Navigation/Navigation";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home/Home";
-import About from "./pages/About/About";
-import SavedDefinitionsContainer from "./pages/SavedDefinitions/SavedDefinitions";
+import { Suspense, lazy } from "react";
+import Loader from "./app-components/Loader/Loader";
 
+
+const Home = lazy(() => import("./pages/Home/Home"));
+const About = lazy(() => import("./pages/About/About"));
+const SavedDefinitionsContainer = lazy(() => import("./pages/SavedDefinitions/SavedDefinitions"));
 
 function App() {
 
@@ -29,14 +32,15 @@ function App() {
             <ToggleSwitch theme={theme} switchTheme={switchTheme} />
             <Navigation />
           </header>
+          <Suspense fallback={<div><Loader /></div>}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/:word" element={<Home />} />
+              <Route path="/saved-definitions" element={<SavedDefinitionsContainer />} />
+              <Route path="/about" element={<About />} />
 
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/:word" element={<Home />} />
-            <Route path="/saved-definitions" element={<SavedDefinitionsContainer />} />
-            <Route path="/about" element={<About />} />
-
-          </Routes>
+            </Routes>
+          </Suspense>
         </main>
       </BrowserRouter>
     </>

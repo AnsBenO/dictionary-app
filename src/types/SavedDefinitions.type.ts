@@ -1,4 +1,4 @@
-export interface SavedDefinition {
+export type SavedDefinition = {
     word: string;
     savedAt: Date | string;
-}
+};

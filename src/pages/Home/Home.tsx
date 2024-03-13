@@ -6,6 +6,7 @@ import { API_URL } from "../../api";
 import Search from "./components/Search/Search";
 import Word from "./components/Word/Word";
 import { useParams } from "react-router-dom";
+import Loader from "../../app-components/Loader/Loader";
 
 function Home() {
   const [query, setQuery] = useState<string>("");
@@ -60,7 +61,7 @@ function Home() {
     <>
       <Search handleSubmit={onSearch} handleChange={handleChange} />
       <div className="content">
-        {loader && <div className="loader"></div>}
+        {loader && <Loader />}
         {wordData ? (
           <Word definitionsData={wordData} />
         ) : submitted ? (
