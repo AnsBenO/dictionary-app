@@ -27,7 +27,7 @@ h1.header {
 }
 
 .search-form-input {
-    padding: 13px;
+    padding: 13px 13px 13px 40px;    
     width: 100%;
     background-color: transparent;
     color: var(--dark-gray);
@@ -39,7 +39,7 @@ h1.header {
 .search-button {
     position: absolute;
     font-size: 18px;
-    right: 10px;
+    left: 5px;
     background-color: transparent;
     height: 35px;
     width: 35px;
